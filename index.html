@@ -263,6 +263,116 @@ Transferencia bancaria
 
 <div class="card">
 
+<div class="card">
+
+<h2>📝 Solicitar Informe o Trámite</h2>
+
+<form onsubmit="enviarWhatsApp(); return false;">
+
+<p><input type="text" id="nombre" placeholder="Nombre y Apellido" style="width:100%;padding:10px;"></p>
+
+<p><input type="text" id="telefono" placeholder="WhatsApp" style="width:100%;padding:10px;"></p>
+
+<p><input type="email" id="email" placeholder="Correo Electrónico" style="width:100%;padding:10px;"></p>
+
+<p>
+
+<select id="tramite" style="width:100%;padding:10px;">
+
+<option>Informe Nominal</option>
+
+<option>Informe de Dominio</option>
+
+<option>Informe Histórico de Dominio</option>
+
+<option>Informe de Infracciones</option>
+
+<option>Informe de Deuda de Patentes</option>
+
+<option>ARBA</option>
+
+<option>RPBA</option>
+
+<option>Otro trámite / Consulta</option>
+
+</select>
+
+</p>
+
+<p><input type="text" id="dato" placeholder="Patente, DNI o dato de referencia" style="width:100%;padding:10px;"></p>
+
+<p><textarea id="obs" placeholder="Observaciones" style="width:100%;padding:10px;height:100px;"></textarea></p>
+
+<button type="submit" class="boton">
+
+Enviar Solicitud por WhatsApp
+
+</button>
+
+</form>
+
+</div>
+
+<script>
+
+
+
+function enviarWhatsApp(){
+
+
+
+let nombre=document.getElementById("nombre").value;
+
+let telefono=document.getElementById("telefono").value;
+
+let email=document.getElementById("email").value;
+
+let tramite=document.getElementById("tramite").value;
+
+let dato=document.getElementById("dato").value;
+
+let obs=document.getElementById("obs").value;
+
+
+
+let mensaje=
+
+`Hola Johanna, deseo realizar una consulta.
+
+
+
+Nombre: ${nombre}
+
+WhatsApp: ${telefono}
+
+Email: ${email}
+
+Trámite: ${tramite}
+
+Dato de referencia: ${dato}
+
+
+
+Observaciones:
+
+${obs}`;
+
+
+
+window.open(
+
+`https://wa.me/5491159639816?text=${encodeURIComponent(mensaje)}`
+
+);
+
+
+
+}
+
+
+
+</script>
+  
 <h2>📞 Contacto</h2>
 
 <p>WhatsApp: +54 9 11 5963-9816</p>
